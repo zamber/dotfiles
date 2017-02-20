@@ -1,4 +1,8 @@
-if [[ $(which apt | grep not found) ]]; then
+if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+    print "  context conf `basename "$0"`"
+fi
+
+if [[ $(which apt | grep "not found") ]]; then
     alias apt="apt-get"
 fi
 

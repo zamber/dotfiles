@@ -1,16 +1,24 @@
+if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+    print global conf `basename "$0"`
+fi
+
 source ~/dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
-source ~/dotfiles/antigen.`hostname`.zsh
+bundles=(z git tmux rsync command-not-found zsh-users/zsh-syntax-highlighting)
 
-antigen bundle git
-antigen bundle pip
-antigen bundle tmux
-antigen bundle command-not-found
-antigen bundle expand-ealias
-
-antigen bundle zsh-users/zsh-syntax-highlighting
+for i in $bundles; do
+    antigen bundle $i
+    if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+        print " global bundle $i"
+    fi
+done
 
 antigen theme robbyrussell
 
+source ~/dotfiles/antigen.`hostname`.zsh
+
+if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+    print "applying antigen..."
+fi
 antigen apply

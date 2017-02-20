@@ -1,3 +1,7 @@
+if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+    print "  context conf `basename "$0"`"
+fi
+
 # adb and fastboot
 alias adbdi="adbrem && adb install"
 alias adbu="adb install -r"
