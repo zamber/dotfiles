@@ -1,7 +1,7 @@
 source ~/dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
-source ~/dotfiles/.zshrc.local.`hostname`
+source ~/dotfiles/antigen.`hostname`.zsh
 
 antigen bundle git
 antigen bundle pip
