@@ -1,4 +1,4 @@
-export DOTFILES_ZSH_DEBUG=true
+export DOTFILES_ZSH_DEBUG=false
 
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print global conf `basename "$0"`
