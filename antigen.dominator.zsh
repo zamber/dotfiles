@@ -10,3 +10,6 @@ for i in $bundles; do
         print "  local bundle $i"
     fi
 done
+
+antigen bundle zsh-users/zsh-completions src/_android
+antigen bundle zsh-users/zsh-completions src/_virtualbox

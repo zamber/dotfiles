@@ -2,7 +2,6 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print " local conf `basename "$0"`"
 fi
 
-# https://bitbucket.org/Phrodo_00/zsh-yaourt/src
 bundles=(adb pip pass systemd)
 
 for i in $bundles; do
@@ -11,3 +10,9 @@ for i in $bundles; do
         print "  local bundle $i"
     fi
 done
+
+# these generate an error - TODO
+# antigen bundle zsh-users/zsh-completions src/_android
+# antigen bundle zsh-users/zsh-completions src/_optirun
+antigen bundle zsh-users/zsh-completions src/_yaourt
+antigen bundle zsh-users/zsh-completions src/_virtualbox
