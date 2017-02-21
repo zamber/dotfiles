@@ -11,5 +11,5 @@ for i in $bundles; do
     fi
 done
 
-antigen bundle zsh-users/zsh-completions src/_android
+# antigen bundle zsh-users/zsh-completions src/_android
 antigen bundle zsh-users/zsh-completions src/_virtualbox
