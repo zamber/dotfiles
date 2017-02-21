@@ -5,3 +5,4 @@ fi
 alias zshrc="subl -w ~/.zshrc && reload"
 alias sshconf="subl ~/.ssh/config"
 alias xo="xdg-open"
+alias takeoutthetrash="rm -rf ~/.local/share/Trash/*"

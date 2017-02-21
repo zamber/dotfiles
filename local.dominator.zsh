@@ -2,8 +2,8 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print " local conf `basename "$0"`"
 fi
 
-source ~/dotfiles/context/ubuntu.zsh
 source ~/dotfiles/context/desktop.zsh
+source ~/dotfiles/context/ubuntu.zsh
 source ~/dotfiles/context/adb.zsh
 
 ################################################################################

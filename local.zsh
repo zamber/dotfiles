@@ -10,11 +10,15 @@ if [[ $(df -T | grep btrfs) ]]; then
     alias cp="cp --reflink=auto"
 fi
 
-alias zshrc="subl -w ~/.zshrc && reload"
-alias sshconf="subl ~/.ssh/config"
+alias top="htop"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias c="clear"
 alias dirv="dirs -v"
+alias dv="dirv"
 alias pag="ps aux | grep"
-alias untgz="tar zxvf"
-alias xo="xdg-open"
+alias tgz="tar -zcvf"
+alias untgz="tar -zxvf"
+alias dush="du -sh */"
+
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
