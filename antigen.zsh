@@ -5,6 +5,7 @@ fi
 source ~/dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
+# zsh-users/zsh-syntax-highlighting has to be last to work properly
 bundles=(z git tmux rsync command-not-found zsh-users/zsh-syntax-highlighting)
 
 for i in $bundles; do
