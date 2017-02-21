@@ -19,6 +19,6 @@ antigen theme robbyrussell
 source ~/dotfiles/antigen.`hostname`.zsh
 
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-    print "applying antigen..."
+    print " applying antigen..."
 fi
 antigen apply
