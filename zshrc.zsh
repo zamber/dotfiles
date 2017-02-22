@@ -1,9 +1,10 @@
-export DOTFILES_ZSH_DEBUG=true
+export DOTFILES_ZSH_DEBUG=false
 
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print global conf `basename "$0"`
 fi
 
-source ~/dotfiles/antigen.zsh
+export DOTFILES_BASEDIR=~/.dotfiles/
 
-source ~/dotfiles/local.zsh
+source $DOTFILES_BASEDIR/antigen.zsh
+source $DOTFILES_BASEDIR/local.zsh

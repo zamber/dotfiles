@@ -2,7 +2,7 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print global conf `basename "$0"`
 fi
 
-source ~/dotfiles/antigen/antigen.zsh
+source $DOTFILES_BASEDIR/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 # antigen theme robbyrussell
@@ -10,7 +10,7 @@ antigen use oh-my-zsh
 # this is a theme too, should be loaded like that
 antigen bundle stevenmirabito/neat
 
-source ~/dotfiles/antigen.`hostname`.zsh
+source $DOTFILES_BASEDIR/antigen.`hostname`.zsh
 
 antigen bundle zsh-users/zsh-completions src/_ag
 antigen bundle zsh-users/zsh-completions src/_ack

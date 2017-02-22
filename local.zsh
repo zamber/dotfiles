@@ -2,7 +2,7 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print global conf `basename "$0"`
 fi
 
-source ~/dotfiles/local.`hostname`.zsh
+source $DOTFILES_BASEDIR/local.`hostname`.zsh
 
 # BTRFS stuff
 
