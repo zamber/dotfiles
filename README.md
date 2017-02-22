@@ -1,5 +1,14 @@
 # dotfiles
 
+## Optional SSH key magic
+
+`~.ssh/config`
+
+host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/id_rsa_@
+    User git
+
 ## Installation
 
     cd ~/
