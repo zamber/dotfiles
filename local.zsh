@@ -6,7 +6,7 @@ source $DOTFILES_BASEDIR/local.`hostname`.zsh
 
 # BTRFS stuff
 
-if [[ $(df -T | grep btrfs) ]]; then
+if [[ -n "$(df -T | grep btrfs)" ]]; then
     alias cp="cp --reflink=auto"
 fi
 
