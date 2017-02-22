@@ -10,6 +10,8 @@ if [[ $(df -T | grep btrfs) ]]; then
     alias cp="cp --reflink=auto"
 fi
 
+alias tmux="tmux -f ~/.tmux.conf"
+
 alias top="htop"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias c="clear"

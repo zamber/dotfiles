@@ -5,3 +5,4 @@ fi
 alias y="yaourt"
 alias yunlock="sudo rm /var/lib/pacman/db.lck"
 alias upg="y -Syyu --noconfirm"
+alias rem="y -R"

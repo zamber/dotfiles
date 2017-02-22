@@ -2,7 +2,7 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print " local conf `basename "$0"`"
 fi
 
-bundles=(svn adb pip pass systemd)
+bundles=(svn adb pip pass systemd rbirnie/oh-my-zsh-keybase)
 
 for i in $bundles; do
     antigen bundle $i
