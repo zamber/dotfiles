@@ -4,18 +4,15 @@
 
 `~.ssh/config`
 
-host github.com
-    HostName github.com
-    IdentityFile ~/.ssh/id_rsa_@
-    User git
+    host github.com
+        HostName github.com
+        IdentityFile ~/.ssh/id_rsa_@
+        User git
 
 ## Installation
 
-    cd ~/
-    git clone --recursive git@github.com:zamber/dotfiles.git
-    ln -s dotfiles/.zshrc .
-    ln -s dotfiles/.tmux.conf .
-
+    git clone --recursive git@github.com:zamber/dotfiles.git ~/.dotfiles
+    cd ~/.dotfiles && ./install
 
 ## Style
 
@@ -30,8 +27,8 @@ Color schemes:
 
 ### Keybindings
 
-- Ctrl+a - prefix
-    + $ - rename tmux session
+- Ctrl+\ - prefix
+    + e - rename tmux session
     + r - reload config
     + & - kill window
     + c - new window
@@ -50,5 +47,4 @@ Color schemes:
 ## TODO:
 
 Check out:
-- https://github.com/anishathalye/dotbot
 - https://github.com/firehol/netdata

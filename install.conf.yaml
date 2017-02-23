@@ -10,5 +10,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Updating submodules]
-  - [git config user.email "piotr@zaborowski.pro"]
-  - [git config user.name "Piotr Zaborowski"]
+  - [git config user.email "piotr@zaborowski.pro", Setting git email]
+  - [git config user.name "Piotr Zaborowski", Setting git username]
