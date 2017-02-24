@@ -10,10 +10,10 @@ antigen use oh-my-zsh
 HOSTFILE=.zsh/host/antigen.`hostname`.zsh
 if [ -f $HOSTFILE ]; then
     source $HOSTFILE
+else
+    # load heavy theme for new hosts
+    antigen bundle stevenmirabito/neat
 fi
-
-# this is a theme too, should be loaded like that
-antigen bundle stevenmirabito/neat
 
 antigen bundle zsh-users/zsh-completions src/_ag
 antigen bundle zsh-users/zsh-completions src/_ack
@@ -33,4 +33,3 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print " applying antigen..."
 fi
 antigen apply
-

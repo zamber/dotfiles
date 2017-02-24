@@ -2,6 +2,8 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print " antigen conf `basename "$0"`"
 fi
 
+antigen bundle stevenmirabito/neat # heavy theme
+
 bundles=(adb pip pass systemd rbirnie/oh-my-zsh-keybase)
 
 for i in $bundles; do
