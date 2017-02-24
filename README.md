@@ -16,7 +16,8 @@
 
 ## Style
 
-Font: Inconsolata 13pt systemwide mono (I'm getting blind)
+Font: Inconsolata mono 13pt systemwide (I'm getting blind)
+
 Color schemes:
 - Desktop: Numix Dark with red accents, Gnome SHELL with dark theme
 - Sublime Edit: Afterglow-orange
@@ -48,3 +49,4 @@ Color schemes:
 
 Check out:
 - https://github.com/firehol/netdata
+- https://medium.com/square-corner-blog/fly-vim-first-class-610f1a39b572#.vs8ko2fr2

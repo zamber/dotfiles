@@ -2,9 +2,9 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print " local conf `basename "$0"`"
 fi
 
-source $DOTFILES_BASEDIR/context/desktop.zsh
-source $DOTFILES_BASEDIR/context/arch.zsh
-source $DOTFILES_BASEDIR/context/adb.zsh
+source ~/.zsh/shared/desktop.zsh
+source ~/.zsh/shared/arch.zsh
+source ~/.zsh/shared/adb.zsh
 
 ################################################################################
 # Exports

@@ -2,15 +2,18 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print global conf `basename "$0"`
 fi
 
-source $DOTFILES_BASEDIR/antigen/antigen.zsh
+source ~/.zsh/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 # antigen theme robbyrussell
 
+HOSTFILE=.zsh/host/antigen.`hostname`.zsh
+if [ -f $HOSTFILE ]; then
+    source $HOSTFILE
+fi
+
 # this is a theme too, should be loaded like that
 antigen bundle stevenmirabito/neat
-
-source $DOTFILES_BASEDIR/antigen.`hostname`.zsh
 
 antigen bundle zsh-users/zsh-completions src/_ag
 antigen bundle zsh-users/zsh-completions src/_ack
