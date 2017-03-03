@@ -26,12 +26,12 @@ logcatnow() {
     fi
 }
 
-# Wireshark
-alias max-qa-wifi="ssh auto tcpdump -i eth1 -n -s 0 -U -w - | wireshark -k -i -"
-
 adbrecord() {
     echo "Started recording for $1 seconds..." && adb shell screenrecord --bit-rate 8000000 --time-limit $1 /sdcard/$2.mp4 && adb pull /sdcard/$2.mp4 . && echo "Recording saved as $2.mp4"
 }
+
+# Wireshark
+alias max-qa-wifi="ssh auto tcpdump -i eth1 -n -s 0 -U -w - | wireshark -k -i -"
 
 # Android battery stuff
 alias bat-prep-dev="adb shell dumpsys batterystats --reset && adb shell dumpsys batterystats --enable full-wake-history"
