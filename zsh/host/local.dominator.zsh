@@ -53,3 +53,5 @@ alias squadak="sudo mkdir -p /media/squadak && sudo mount -t cifs //squadak.wroc
 alias vpi="xtightvncviewer 10.40.140.52:5900 -passwd /home/piotr/.vnc/passwd"
 
 export JENKINS_URL=http://maximus.service.osa:8080/
+
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"

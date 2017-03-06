@@ -1,6 +1,6 @@
 [alias]
     exec = ! "exec"
-    st = status -sb
+    s = status -sb
     br = branch -vv
     bra = branch -vv --all
     bed = branch --edit-description
@@ -65,7 +65,7 @@
     keepBackup = false
 
 [push]
-    default = upstream
+    default = matching
 
 [grep]
     lineNumber = true
