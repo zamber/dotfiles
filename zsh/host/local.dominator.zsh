@@ -4,6 +4,7 @@ fi
 
 source ~/.zsh/shared/desktop.zsh
 source ~/.zsh/shared/ubuntu.zsh
+source ~/.zsh/shared/gnome-shell.zsh
 source ~/.zsh/shared/adb.zsh
 
 ################################################################################
