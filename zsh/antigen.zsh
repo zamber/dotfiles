@@ -7,7 +7,7 @@ source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 # antigen theme robbyrussell
 
-HOSTFILE=.zsh/host/antigen.`hostname`.zsh
+HOSTFILE=~/.zsh/host/antigen.`hostname`.zsh
 if [ -f $HOSTFILE ]; then
     source $HOSTFILE
 else
