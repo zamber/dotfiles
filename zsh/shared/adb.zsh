@@ -9,7 +9,7 @@ alias adbs="adb shell"
 alias adbshot="adb shell screencap -p | sed 's/\r$//' >!"
 alias adbshotdate='date +%F-%T.png | while read i; do adbshot ${i}; done'
 alias adbpack="adb shell 'pm list packages -f' | cut -f 2 -d '='"
-alias adbopera="adbpack | grep -o -e 'com.opera.max[a-z\.]*'"
+alias adbopera="adbpack | grep -o -e 'com.opera.max.[^p].*'"
 alias adbrem="adbopera | xargs -r adb uninstall"
 alias adbclear="adbopera | xargs -r adb shell pm clear"
 alias adbl="adb shell logcat -v threadtime"

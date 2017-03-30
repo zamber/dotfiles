@@ -7,7 +7,8 @@ if [[ -n "$(gconftool-2 --search-key focus_new_windows)" ]]; then
         print "   no need to set focus_new_windows"
     fi
 else
-    gconftool-2 --set /apps/metacity/general/focus_new_windows --type string strict
+    gsettings set org.gnome.desktop.wm.preferences focus-new-windows ‘strict’
+    #gconftool-2 --set /apps/metacity/general/focus_new_windows --type string strict
     if [ $DOTFILES_ZSH_DEBUG = true ] ; then
         print "   set focus_new_windows"
     fi

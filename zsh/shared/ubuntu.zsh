@@ -14,4 +14,4 @@ alias arem="sudo apt autoremove -y"
 
 alias s="apt-cache search"
 alias upg="u && arem && sudo apt upgrade -y"
-alias udevreload="udevadm control --reload-rules"
+alias udevreload="sudo udevadm control --reload-rules"
