@@ -7,7 +7,7 @@ source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 # antigen theme robbyrussell
 
-HOSTFILE=~/.zsh/host/antigen.`hostname`.zsh
+HOSTFILE=~/.zsh/host/antigen.`hostname -s`.zsh
 if [ -f $HOSTFILE ]; then
     source $HOSTFILE
 else
@@ -15,11 +15,12 @@ else
     antigen bundle stevenmirabito/neat
 fi
 
-antigen bundle zsh-users/zsh-completions src/_ag
-antigen bundle zsh-users/zsh-completions src/_ack
+# antigen bundle zsh-users/zsh-completions src/_ag
+# antigen bundle zsh-users/zsh-completions src/_ack
 
 # zsh-users/zsh-syntax-highlighting has to be last to work properly
-bundles=(git tmux rsync command-not-found willghatch/zsh-cdr zsh-users/zsh-syntax-highlighting)
+# taken out tmux because brew didn't make it visible to zsh
+bundles=(git command-not-found willghatch/zsh-cdr zsh-users/zsh-syntax-highlighting)
 
 
 for i in $bundles; do

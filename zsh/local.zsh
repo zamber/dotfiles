@@ -2,20 +2,22 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
     print global conf `basename "$0"`
 fi
 
-HOSTFILE=~/.zsh/host/local.`hostname`.zsh
+HOSTFILE=~/.zsh/host/local.`hostname -s`.zsh
 if [ -f $HOSTFILE ]; then
     source $HOSTFILE
 fi
 
 # BTRFS stuff
 
-if [[ -n "$(df -T | grep btrfs)" ]]; then
-    alias cp="cp --reflink=auto"
+if [[ "$(uname)" != "Darwin" ]]; then
+    if [[ -n "$(df -T | grep btrfs)" ]]; then
+        alias cp="cp --reflink=auto"
+    fi
 fi
 
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 
-alias tmux="tmux -f ~/.tmux.conf"
+# alias tmux="tmux -f ~/.tmux.conf"
 
 alias top="htop"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
