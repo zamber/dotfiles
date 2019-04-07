@@ -47,7 +47,7 @@
     targz = ! "targz() { git archive --format tar.gz --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; targz"
     zip = ! "zip() { git archive --format zip --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; zip"
     mt = mergetool
-    up = !git fetch && git rebase --autostash FETCH_HEAD
+    up = pull --rebase --autostash
 
 [color]
     ui = auto
@@ -59,7 +59,7 @@
 
 [merge]
     defaultToUpstream = true
-    tool = vimdiff
+    tool = kdiff3
 
 [mergetool]
     keepBackup = false
@@ -78,6 +78,10 @@
 
 [core]
     excludesfile = ~/.gitignore
+
+[user]
+	email = piotr.zaborowski@enginiety.com
+	name = Piotr Zaborowski
 
 # Allow local customizations in the .gitconfig_local file
 [include]
