@@ -3,10 +3,10 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 # Use vim as the editor
-export EDITOR=subl
+export EDITOR=code
 
 alias clip="xsel --clipboard"
-alias zshrc="subl -w ~/.dotfiles/ && reload"
-alias sshconf="subl ~/.ssh/config"
+alias zshrc="code -nw ~/.dotfiles/ && reload"
+alias sshconf="code ~/.ssh/config"
 alias xo="xdg-open"
 alias takeoutthetrash="rm -rf ~/.local/share/Trash/*"

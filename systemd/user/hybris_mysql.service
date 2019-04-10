@@ -1,0 +1,12 @@
+[Unit]
+Description=Run MySQL Docker image for Vision Express Hybris
+After=docker.target
+Requires=docker.target
+
+[Service]
+WorkingDirectory=%h
+
+ExecStart=docker run --name=gvmysql -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=root" -e "MYSQL_DATABASE=grandv" -e "MYSQL_USER=grandvision" -e "MYSQL_PASSWORD=grandvision" -e MYSQL_ROOT_HOST="172.17.0.1" -e "MYSQL_LOG_CONSOLE=true" -d mysql/mysql-server:5.7.20
+
+[Install]
+WantedBy=multi-user.target

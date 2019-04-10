@@ -5,11 +5,22 @@
 - clean: ['~']
 
 - link:
-    ~/.zsh: zsh
-    ~/.zshrc: zshrc
-    ~/.tmux.conf: tmux.conf
-    ~/.gitconfig: gitconfig
-    ~/.gitignore: gitignore
+    ~/.zsh:
+        relink: true
+    ~/.zshrc:
+        relink: true
+    ~/.tmux.conf:
+    ~/.gitconfig:
+    ~/.gitignore:
+    ~/.config/systemd/user/:
+        glob: true
+        path: systemd/user/*
+        relink: true
+    ~/.local/bin:
+        glob: true
+        path: bin/*
+        relink: true
 
 - shell:
   - [git submodule update --init --recursive, Updating submodules]
+  - [systemctl --user daemon-reload]

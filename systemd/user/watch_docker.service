@@ -1,0 +1,10 @@
+[Unit]
+Description=watch for docker to start docker.target
+After=started.target
+
+[Service]
+ExecStart=/bin/bash -c watch_docker
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
