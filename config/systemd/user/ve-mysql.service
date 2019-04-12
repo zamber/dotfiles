@@ -1,0 +1,14 @@
+[Unit]
+Description=Run MySQL Docker image for Vision Express Hybris
+After=docker.target
+Requires=docker.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/ve-run-mysql.sh
+RemainAfterExit=true
+ExecStop=%h/.local/bin/ve-stop-mysql.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target

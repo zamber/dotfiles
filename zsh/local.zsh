@@ -47,3 +47,6 @@ alias cdgr='cd "$(git root)"'
 function jump() {
     cd "$(dirname ${1})"
 }
+
+# add local bin files
+export PATH=~/.local/bin/:$PATH

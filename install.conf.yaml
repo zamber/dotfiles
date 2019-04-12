@@ -2,25 +2,30 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean:
+    ~:
+    ~/.config/systemd/user/:
+    ~/.local/bin/:
+
+- defaults:
+    link:
+        create: true
+        relink: true
 
 - link:
     ~/.zsh:
-        relink: true
     ~/.zshrc:
-        relink: true
     ~/.tmux.conf:
     ~/.gitconfig:
     ~/.gitignore:
     ~/.config/systemd/user/:
         glob: true
-        path: systemd/user/*
-        relink: true
-    ~/.local/bin:
+        path: config/systemd/user/*
+    ~/.local/bin/:
         glob: true
-        path: bin/*
-        relink: true
+        path: local/bin/*
 
 - shell:
   - [git submodule update --init --recursive, Updating submodules]
   - [systemctl --user daemon-reload]
+  - [reload]

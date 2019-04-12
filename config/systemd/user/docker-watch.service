@@ -3,8 +3,8 @@ Description=watch for docker to start docker.target
 After=started.target
 
 [Service]
-ExecStart=/bin/bash -c watch_docker
+ExecStart=%h/.local/bin/docker-check.sh
 Restart=on-failure
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

@@ -1,11 +1,11 @@
 [Unit]
 Description=Run local Hybris for Vision Express
-After=hybris_mysql.service
-Requires=hybris_mysql.service
+After=ve-mysql.service
+Requires=ve-mysql.service
 
 [Service]
 WorkingDirectory=%h/repos/ve/hybris/bin/platform/
 ExecStart=%h/repos/ve/hybris/bin/platform/hybrisserver.sh
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

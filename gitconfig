@@ -86,3 +86,5 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret
