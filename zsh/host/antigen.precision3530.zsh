@@ -4,7 +4,7 @@ fi
 
 antigen bundle stevenmirabito/neat # heavy theme
 
-bundles=(pip systemd nvm rbirnie/oh-my-zsh-keybase)
+bundles=(pip systemd nvm emoji)
 
 for i in $bundles; do
     antigen bundle $i

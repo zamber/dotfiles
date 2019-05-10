@@ -8,7 +8,14 @@ function nvm_install () {
 }
 
 if command -v nvm $1>/dev/null; then
-    print "   nvm installed, pass..."
+    print "   nvm installed, pass"
 else
     nvm_install
+fi
+
+if command -v yarn $1>/dev/null; then
+    export PATH=$(yarn global bin):$PATH
+    print "   yarn global bin added to PATH"
+else
+    print "   yarn not found, pass"
 fi

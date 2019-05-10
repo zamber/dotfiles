@@ -30,3 +30,6 @@ access.log
 .vagrant/*
 
 .env
+
+**/NOTES.md
+hybris/bin/custom/grandvision/grandvisionstorefront/web/addontestsrc/gvassistedservicestorefront/com/grandvision/assistedservicestorefront/security/AssistedServiceTokenHelperTest.java

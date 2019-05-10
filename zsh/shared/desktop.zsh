@@ -3,7 +3,7 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 # Use vim as the editor
-export EDITOR=code
+export EDITOR=vim
 
 alias clip="xsel --clipboard"
 alias zshrc="code -nw ~/.dotfiles/ && reload"
