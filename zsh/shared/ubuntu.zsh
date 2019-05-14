@@ -1,9 +1,9 @@
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-    print "  shared conf `basename "$0"`"
+  echo "\e[2m  shared conf $(basename "$0")\e[0m"
 fi
 
 if [[ $(which apt | grep "not found") ]]; then
-    alias apt="apt-get"
+  alias apt="apt-get"
 fi
 
 alias getjdk="java -version && update-java-alternatives -l"

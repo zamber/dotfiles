@@ -1,12 +1,13 @@
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-    print "  shared conf `basename "$0"`"
+  echo "\e[2m  shared conf $(basename "$0")\e[0m"
 fi
 
-alias i="sudo dnf install"
-alias u="sudo dnf update"
-alias rem="sudo dnf remove"
-alias arem="sudo dnf autoremove -y"
-
-alias s="dnf search"
-alias upg="u && arem && sudo dnf upgrade -y"
-alias udevreload="sudo udevadm control --reload-rules"
+abbrevs+=(
+  "ins" "sudo dnf install"
+  "upd" "sudo dnf update"
+  "rem" "sudo dnf remove"
+  "arem" "sudo dnf autoremove -y"
+  "ser" "dnf search"
+  "upg" "upd && arem && sudo dnf upgrade -y"
+  "udevreload" "sudo udevadm control --reload-rules"
+)

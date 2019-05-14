@@ -18,6 +18,8 @@
     ~/.tmux.conf:
     ~/.gitconfig:
     ~/.gitignore:
+    ~/.config/cava/config:
+        path: config/cava/config
     ~/.config/systemd/user/:
         glob: true
         path: config/systemd/user/*

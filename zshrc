@@ -1,7 +1,7 @@
-export DOTFILES_ZSH_DEBUG=true
+export DOTFILES_ZSH_DEBUG=false
 
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-    print global conf `basename "$0"`
+  echo "\e[2mglobal conf $(basename "$0")\e[0m"
 fi
 
 source ~/.zsh/antigen.zsh

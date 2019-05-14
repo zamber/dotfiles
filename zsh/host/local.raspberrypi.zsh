@@ -1,5 +1,5 @@
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-    print " local conf `basename "$0"`"
+  echo "\e[2m local conf $(basename "$0")\e[0m"
 fi
 
 source ~/.zsh/shared/ubuntu.zsh

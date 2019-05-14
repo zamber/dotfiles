@@ -1,5 +1,5 @@
 if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-    print " antigen conf `basename "$0"`"
+  echo "\e[2m antigen conf $(basename "$0")\e[0m"
 fi
 
 antigen bundle stevenmirabito/neat # heavy theme
@@ -7,10 +7,10 @@ antigen bundle stevenmirabito/neat # heavy theme
 bundles=(adb pip pass systemd rbirnie/oh-my-zsh-keybase)
 
 for i in $bundles; do
-    antigen bundle $i
-    if [ $DOTFILES_ZSH_DEBUG = true ] ; then
-        print "  local bundle $i"
-    fi
+  antigen bundle $i
+  if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+    print "  local bundle $i"
+  fi
 done
 
 # these generate an error - TODO

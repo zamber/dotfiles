@@ -8,6 +8,7 @@
     ci = commit -v
     ca = commit --amend -v
     co = checkout
+    cp = cherry-pick
     di = diff
     dis = diff --stat
     diw = diff --color-words
