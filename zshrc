@@ -7,8 +7,8 @@ fi
 source ~/.zsh/antigen.zsh
 source ~/.zsh/local.zsh
 
-export NVM_DIR="/home/pz/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="/home/pz/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
@@ -29,5 +29,5 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+#add-zsh-hook chpwd load-nvmrc
+#load-nvmrc
