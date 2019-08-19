@@ -80,12 +80,19 @@
 [core]
     excludesfile = ~/.gitignore
 
-[user]
-	email = piotr.zaborowski@enginiety.com
-	name = Piotr Zaborowski
-
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
 [credential]
 	helper = /usr/libexec/git-core/git-credential-libsecret
+
+[user]
+        email = piotr.zaborowski@synergycodes.com
+        name = Piotr Zaborowski
+        signingKey = 9F93F34DA253C1E2482B657995B61C4C6E75E72D
+[commit]
+        gpgSign = true
+[tag]
+        forceSignAnnotated = true
+[gpg]
+        program = gpg

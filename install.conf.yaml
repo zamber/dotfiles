@@ -2,15 +2,15 @@
     link:
       relink: true
 
-- clean:
-    ~:
-    ~/.config/systemd/user/:
-    ~/.local/bin/:
+# - clean:
+#     ~:
+#     # ~/.config/systemd/user/:
+#     ~/.local/bin/:
 
 - defaults:
     link:
-        create: true
-        relink: true
+      create: true
+      relink: true
 
 - link:
     ~/.zsh:
@@ -19,15 +19,15 @@
     ~/.gitconfig:
     ~/.gitignore:
     ~/.config/cava/config:
-        path: config/cava/config
+      path: config/cava/config
     ~/.config/systemd/user/:
-        glob: true
-        path: config/systemd/user/*
+      glob: true
+      path: config/systemd/user/*
     ~/.local/bin/:
-        glob: true
-        path: local/bin/*
+      glob: true
+      path: local/bin/*
 
 - shell:
-  - [git submodule update --init --recursive, Updating submodules]
-  - [systemctl --user daemon-reload]
-  - [reload]
+    - [git submodule update --init --recursive, Updating submodules]
+    #   - [systemctl --user daemon-reload]
+    - [. ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc']
