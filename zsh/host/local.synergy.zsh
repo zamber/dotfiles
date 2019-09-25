@@ -3,29 +3,23 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 source ~/.zsh/shared/desktop.zsh
-source ~/.zsh/shared/fedora.zsh
+source ~/.zsh/shared/silverblue.zsh
 source ~/.zsh/shared/selinux.zsh
-source ~/.zsh/shared/adb.zsh
 source ~/.zsh/shared/systemd.zsh
 source ~/.zsh/shared/nvm.zsh
+source ~/.zsh/shared/git.zsh
 
-alias vscodium="/usr/share/codium/codium"
-alias reactide="/home/pz/repos/tools/reactide/release-builds/Reactide-darwin-x64"
-
+alias code-oss="flatpak run com.visualstudio.code.oss"
+alias code="code-oss"
 abbrevs+=(
-  "code" "vscodium"
-  "y" "yarn"
-  "localaliasrc" "code $HOME/.dotfiles/zsh/host/local.precision3530.zsh"
+  "code" "code-oss"
+  "tb" "toolbox"
+  "tbe" "toolbox enter"
 )
 
-# a nice tag-extracting utility function to be used as $(t) inside of abbrevs
-t() {
-  git branch | grep "*" | egrep -o "[A-Z]{3,5}-[0-9]{1,5}"
-}
+# Fedora Silverblue / Flatpak fixes
 
-abbrevs+=(
-  "rel" "release/v2.5.2"
-  "spr" "sprint/19.02"
-  "gc" 'g commit -m "$(t)"'
-  "vis" "cava"
-)
+# https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi

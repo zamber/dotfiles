@@ -3,6 +3,7 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 # add environment vars to systemd for user services
-systemctl --user import-environment PATH
+# systemctl --user import-environment PATH
 
-alias hybris_log="journalctl --user-unit hybris_ve.service -f"
+# an example of a userspace systemd service journal
+# alias hybris_log="journalctl --user-unit hybris_ve.service -f"

@@ -19,9 +19,13 @@ fi
 # antigen bundle zsh-users/zsh-completions src/_ack
 
 # zsh-users/zsh-syntax-highlighting has to be last to work properly
-# taken out tmux because brew didn't make it visible to zsh
-bundles=(git command-not-found willghatch/zsh-cdr zsh-users/zsh-syntax-highlighting)
-
+bundles=(
+  git
+  command-not-found
+  # willghatch/zsh-cdr
+  zsh-users/zsh-autosuggestions
+  zdharma/fast-syntax-highlighting
+)
 
 for i in $bundles; do
   antigen bundle $i
@@ -35,3 +39,6 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 antigen apply
+
+# fast syntax highlighting -- issue fix https://github.com/zdharma/fast-syntax-highlighting/issues/146
+FAST_HIGHLIGHT[chroma-git]="chroma/-ogit.ch"

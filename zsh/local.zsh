@@ -67,35 +67,36 @@ for abbr in ${(k)abbrevs}; do
   alias $abbr="${abbrevs[$abbr]}"
 done
 
-magic-abbrev-expand() {
-  local MATCH
-  LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#}
-  command=${abbrevs[$MATCH]}
-  LBUFFER+=${command:-$MATCH}
+## TODO test if it works with the other theme or if it's an issue with the syntax coloring stuff (should load before that maybe? )
+# magic-abbrev-expand() {
+#   local MATCH
+#   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#}
+#   command=${abbrevs[$MATCH]}
+#   LBUFFER+=${command:-$MATCH}
 
-  if [[ "${command}" =~ "__CURSOR__" ]]; then
-    RBUFFER=${LBUFFER[(ws:__CURSOR__:)2]}
-    LBUFFER=${LBUFFER[(ws:__CURSOR__:)1]}
-  else
-    zle self-insert
-  fi
-}
+#   if [[ "${command}" =~ "__CURSOR__" ]]; then
+#     RBUFFER=${LBUFFER[(ws:__CURSOR__:)2]}
+#     LBUFFER=${LBUFFER[(ws:__CURSOR__:)1]}
+#   else
+#     zle self-insert
+#   fi
+# }
 
-magic-abbrev-expand-and-execute() {
-  magic-abbrev-expand
-  zle backward-delete-char
-  zle accept-line
-}
+# magic-abbrev-expand-and-execute() {
+#   magic-abbrev-expand
+#   zle backward-delete-char
+#   zle accept-line
+# }
 
-no-magic-abbrev-expand() {
-  LBUFFER+=' '
-}
+# no-magic-abbrev-expand() {
+#   LBUFFER+=' '
+# }
 
-zle -N magic-abbrev-expand
-zle -N magic-abbrev-expand-and-execute
-zle -N no-magic-abbrev-expand
+# zle -N magic-abbrev-expand
+# zle -N magic-abbrev-expand-and-execute
+# zle -N no-magic-abbrev-expand
 
-bindkey " " magic-abbrev-expand
-bindkey "^M" magic-abbrev-expand-and-execute
-bindkey "^x " no-magic-abbrev-expand
-bindkey -M isearch " " self-insert
+# bindkey " " magic-abbrev-expand
+# bindkey "^M" magic-abbrev-expand-and-execute
+# bindkey "^x " no-magic-abbrev-expand
+# bindkey -M isearch " " self-insert

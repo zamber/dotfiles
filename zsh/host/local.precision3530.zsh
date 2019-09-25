@@ -45,8 +45,6 @@ abbrevs+=(
   "velognopager" "journalctl --user-unit ve-hybris.service --user-unit ve-mysql.service --no-pager | less -+S"
   "vemysqlinit" 'sudo docker run --name=gvmysql -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=root" -e "MYSQL_DATABASE=grandv" -e "MYSQL_USER=grandvision" -e "MYSQL_PASSWORD=grandvision" -e MYSQL_ROOT_HOST="172.17.0.1" -e "MYSQL_LOG_CONSOLE=true" -d mysql/mysql-server:5.7.20'
   "vefixaccountspeed" "sudo ifconfig lo:1 inet 176.119.58.229 netmask 255.255.255.255 up"
-  "rel" "release/v2.5.2"
-  "spr" "release/Sprint57"
   "gc" 'g commit -m "$(t)"'
   "vis" "cava"
 )

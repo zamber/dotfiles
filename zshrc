@@ -4,8 +4,8 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
   echo "\e[2mglobal conf $(basename "$0")\e[0m"
 fi
 
-source ~/.zsh/antigen.zsh
 source ~/.zsh/local.zsh
+source ~/.zsh/antigen.zsh
 
 #export NVM_DIR="/home/pz/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -32,3 +32,5 @@ load-nvmrc() {
 #add-zsh-hook chpwd load-nvmrc
 #load-nvmrc
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source ~/.zsh/end.zsh

@@ -3,9 +3,9 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 abbrevs+=(
-  "ins" "sudo dnf install"
-  "upd" "sudo dnf update"
-  "rem" "sudo dnf remove"
+  "ins" "sudo dnf install -y"
+  "upd" "sudo dnf update -y"
+  "rem" "sudo dnf remove -y"
   "arem" "sudo dnf autoremove -y"
   "ser" "dnf search"
   "upg" "upd && arem && sudo dnf upgrade -y"
