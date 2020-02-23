@@ -13,3 +13,5 @@ else
     print "   set focus_new_windows"
   fi
 fi
+
+alias gnome_disable_animations="gsettings set org.gnome.desktop.interface enable-animations false"

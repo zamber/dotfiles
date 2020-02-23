@@ -1,4 +1,4 @@
-if [ $DOTFILES_ZSH_DEBUG = true ] ; then
+if [ $DOTFILES_ZSH_DEBUG = true ]; then
   echo "\e[2m  shared conf $(basename "$0")\e[0m"
 fi
 
@@ -24,20 +24,20 @@ _cache_line() {
 
 _main_branch() {
   BRANCHCACHE=/tmp/branchcache
-  if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
-    if [ ! -e "$BRANCHCACHE" ] ; then
+  if [ -d .git ] || git rev-parse --git-dir >/dev/null 2>&1; then
+    if [ ! -e "$BRANCHCACHE" ]; then
       touch "$BRANCHCACHE"
     fi
     hit=$(_cache_hit)
     if [ -n "$hit" ]; then
       echo $hit
     else
-      echo $(_cache_line) > $BRANCHCACHE
+      echo $(_cache_line) >$BRANCHCACHE
       echo $(_cache_hit)
     fi
   else
     echo not_a_git_repo_noob
-  fi;
+  fi
 }
 
 spr() {
@@ -46,4 +46,36 @@ spr() {
 
 gspr() {
   git checkout $(_main_branch)
+}
+
+git-is-merged() {
+  merge_destination_branch=$1
+  merge_source_branch=$2
+
+  merge_base=$(git merge-base $merge_destination_branch $merge_source_branch)
+  merge_source_current_commit=$(git rev-parse $merge_source_branch)
+  if [[ $merge_base == $merge_source_current_commit ]]; then
+    echo $merge_source_branch
+    return 0
+  else
+    # echo $merge_source_branch is not merged into $merge_destination_branch
+    return 1
+  fi
+}
+
+git-list-merged() {
+  git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' > /tmp/zsh-git-refs-temp
+  while read line; do
+    git-is-merged HEAD $(echo $line | awk -F" " '{print $2}')
+    #echo $line
+  done < /tmp/zsh-git-refs-temp
+  rm /tmp/zsh-git-refs-temp
+}
+
+git-rm-merged() {
+  git-list-merged | egrep --invert-match '(master|sprint)' > /tmp/zsh-git-refs-merged-HEAD
+  while read line; do
+    git push origin --delete $line
+  done < /tmp/zsh-git-refs-merged-HEAD
+  rm /tmp/zsh-git-refs-merged-HEAD
 }

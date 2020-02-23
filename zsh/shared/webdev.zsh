@@ -3,13 +3,14 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 abbrevs+=(
-  "y" "yarn"
+  "y" "yarn",
+  "ys" "yarn && yarn start"
 )
 
 # NVM
 
 # fix complaints
-nvm use --delete-prefix v12.10.0
+nvm use --delete-prefix v12.14.1
 
 nvm_install() {
   mkdir -p $HOME/.nvm/

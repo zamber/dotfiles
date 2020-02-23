@@ -4,7 +4,6 @@
 *.pyc
 
 # Build dirs
-build/
 dist/
 node_modules/
 
@@ -32,4 +31,5 @@ access.log
 .env
 
 **/NOTES.md
-hybris/bin/custom/grandvision/grandvisionstorefront/web/addontestsrc/gvassistedservicestorefront/com/grandvision/assistedservicestorefront/security/AssistedServiceTokenHelperTest.java
+
+pzignore-*

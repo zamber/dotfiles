@@ -25,12 +25,18 @@
     ~/.config/systemd/user/:
       glob: true
       path: config/systemd/user/*
+    ~/.icons/:
+      glob: true
+      path: gtk-icons/*
     ~/.themes/:
       glob: true
       path: gtk-themes/*
     ~/.local/bin/:
       glob: true
       path: local/bin/*
+    ~/.local/share/fonts/:
+      glob: true
+      path: local/share/fonts/*
 
 - shell:
     - [git submodule update --init --recursive, Updating submodules]

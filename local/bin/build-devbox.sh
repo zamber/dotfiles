@@ -1,6 +1,6 @@
 #!/bin/zsh
 set -eux
-NAME=fedora-toolbox-30
+NAME=fedora-toolbox-$(cat /etc/os-release | grep VERSION_ID | egrep -o "[0-9]{2}")
 
 if [ -n "${TOOLBOX_RELEASE:-}" ]; then
     RELEASE="--release $TOOLBOX_RELEASE"
@@ -10,7 +10,7 @@ else
 fi
 
 toolbox rm --force $NAME || true
-toolbox create $RELEASE -c $NAME
+toolbox create $RELEASE -c $NAME 
 
 # sudo dnf install -y adapta-gtk-theme autojump-zsh paper-icon-theme gimp inkscape zsh
 

@@ -3,4 +3,4 @@ if [ $DOTFILES_ZSH_DEBUG = true ] ; then
 fi
 
 # # hack fix nvm not running with default version
-nvm use --delete-prefix v12.10.0 > /dev/null
+nvm use --delete-prefix v12.14.1 > /dev/null
